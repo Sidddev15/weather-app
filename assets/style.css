@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+::root {
+    --primary-font: 'Raleway', sans-serif;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #5498f1;
+    border-radius: 1px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #84aee6;
+}
+
+/* Loader */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #474747;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.color-weather {
+    background: linear-gradient(to bottom, #DEE4EA, #F9FCFF);
+    background-repeat: no-repeat;
+    height: 98.2vh;
+}
+
+.input-container {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.cityName {
+    border: 1px solid #eee;
+    height: 50px;
+    width: 40vw;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding-left: 20px;
+    font-family: var(--primary-font);
+    font-size: 21px;
+    color: #353535;
+    font-weight: 400;
+}
+
+.cityName:focus {
+    outline: 0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7px;
+    color: #353535;
+    font-family: var(--primary-font);
+    font-size: 17px;
+    background: #353535;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px 40px;
+    transition: all 0.5s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.btn:hover {
+    background: #444444;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.weather-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    display: none;
+}
+
+.temperature {
+    font-size: 44px;
+    font-weight: 600;
+    color: #121212;
+    font-family: var(--primary-font);
+}
+.description {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #121212;
+    font-family: var(--primary-font);
+    letter-spacing: 0.6px;
+}
+
+@media (max-width:991px) {
+    .weather-box {
+        width: 100%;
+    }
+    .input-container {
+        flex-wrap: wrap;
+        width: 100%;
+        row-gap: 10px;
+        margin-top: 30px;
+    }
+    .cityName {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
